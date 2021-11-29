@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar >
+    <ion-buttons slot="start">
+
+    <ion-back-button *ngIf="route!='/performance'"></ion-back-button>
+      <ion-menu-button *ngIf="route=='/performance'">
+        <ion-icon name="menu-outline"></ion-icon>
+      </ion-menu-button>
+    </ion-buttons>
+    <ion-title>Performances</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  
+    <ion-card *ngFor="let performance of performances">
+ 
+      <ion-card-header>
+        <ion-card-title> {{performance?.title |titlecase}} </ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <table >
+          <tr>
+            <th>Metrics</th>
+            <th>Value</th>
+          </tr>
+           <tr *ngFor="let item of metrics">
+            <td> {{item.split("_").join(" ")|titlecase }} </td>
+            <td>{{performance.metrics[item] }}</td>
+          </tr> 
+        </table>
+      </ion-card-content>
+    </ion-card>
+</ion-content>

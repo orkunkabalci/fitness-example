@@ -1,0 +1,32 @@
+ion-item{
+    --background:success;
+    --color: var(--primary);
+}
+ion-button{
+    --background: var(--maincolor3);
+}
+h3{
+    margin-top: 200px;
+    text-align: center;
+    color: var(--maincolor1);
+
+}
+.btn{
+    margin-top: 20px;
+    margin-left: 135px;
+
+}
+h5{
+    text-align: center;
+    color: var(--maincolor1);
+}
+::ng-deep{
+.maincontent{
+    --ion-background-color: var(--maincolor2);
+}}
+
+// ::ng-deep{
+//     .row{
+//         background-color: var(--maincolor1);
+//     }
+// }

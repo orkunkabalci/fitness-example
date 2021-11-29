@@ -1,0 +1,25 @@
+:host {
+  table {
+    width: 100%;
+  }
+  td {
+    border: 1px solid  var(--third);;
+    border-collapse: collapse;
+    text-align: center;
+    padding: 10px;
+    color:  var(--secondery);;
+    padding: 15px;
+    font-weight: bold;
+  }
+  th {
+    text-align: center;
+    padding: 10px;
+    color:  var(--secondery);
+    font-size: 22px;
+    font-weight: bolder;
+  }
+  
+  ion-card-title {
+    text-align: center;
+  }
+}

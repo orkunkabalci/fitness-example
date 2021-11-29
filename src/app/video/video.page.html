@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-toolbar >
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{video?.name|titlecase}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <video (play)="addwatched()" [src]="video?.video" class="vid" [poster]="video?.image" width="360" height="200"
+    controls></video>
+  <p>{{video?.description}}</p>
+</ion-content>

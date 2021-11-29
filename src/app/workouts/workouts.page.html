@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button *ngIf="route!='/workouts'"></ion-back-button>
+      <ion-menu-button *ngIf="route=='/workouts'">
+        <ion-icon name="menu-outline"></ion-icon>
+      </ion-menu-button>
+    </ion-buttons>
+    <ion-title>Workouts </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div>
+    <div *ngFor="let training of trainings">
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title class="title"> {{training?.name|titlecase}} </ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-slides pager="true" [options]="slideOpts">
+            <ion-slide *ngFor="let video of training.packet.videos">
+              <img [routerLink]="['/video',video?._id]" [src]="video?.image">
+            </ion-slide>
+          </ion-slides>
+          <ion-label>{{training.description}}</ion-label>
+          <ion-footer class="footer">
+            <ion-item lines="none">Teacher: {{training?.teacher.name}}
+              <ion-avatar class="avatar">
+                <img [routerLink]="['/teacher',training?.teacher._id]" [src]="training?.teacher.picture">
+              </ion-avatar>
+            </ion-item>
+          </ion-footer>
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </div>
+</ion-content>

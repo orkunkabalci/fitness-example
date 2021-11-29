@@ -1,3 +1,51 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+  <ion-menu side="start" menuId="first" contentId="main" class="my-custom-menu">
+    <ion-header>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+        <ion-item detail="false" lines="none" routerLink="/profile" [class.active]="checkactive('profile')"
+          (click)="menuclose('profile');">
+          <ion-icon class="icon" [class.active]="checkactive('profile')" name="person-outline"></ion-icon>
+        </ion-item>
+        <p [class.active]="checkactive('profile')">Profile</p>
+
+        <ion-item lines="none" detail="false" routerLink="/branches" [class.active]="checkactive('branches')"
+          (click)="menuclose('branches');">
+          <ion-icon class="icon" [class.active]="checkactive('branches')" name="git-branch-outline"></ion-icon>
+        </ion-item>
+        <p [class.active]="checkactive('branches')">Branches</p>
+
+
+        <ion-item lines="none" detail="false" routerLink="/workouts" [class.active]="checkactive('workouts')"
+          (click)="menuclose('workouts');">
+          <ion-icon class="icon" [class.active]="checkactive('workouts')" name="body-outline"></ion-icon>
+        </ion-item>
+        <p [class.active]="checkactive('workouts')">Workouts</p>
+
+        <ion-item lines="none" detail="false" routerLink="/foodprogram" [class.active]="checkactive('foodprogram')"
+          (click)="menuclose('foodprogram');">
+          <ion-icon class="icon" [class.active]="checkactive('foodprogram')" name="restaurant-outline"></ion-icon>
+        </ion-item>
+        <p [class.active]="checkactive('foodprogram')">Food Program</p>
+        <ion-item lines="none" detail="false" routerLink="/performance" [class.active]="checkactive('performance')"
+          (click)="menuclose('performance');">
+          <ion-icon class="icon" [class.active]="checkactive('performance')" name="stats-chart-outline"></ion-icon>
+        </ion-item>
+        <p [class.active]="checkactive('performance')">Performance</p>
+
+        <ion-item lines="none" detail="false" routerLink="/weekly-program"
+          [class.active]="checkactive('weekly-program')" (click)="menuclose('weekly-program');">
+          <ion-icon class="icon" [class.active]="checkactive('weekly-program')" name="calendar-outline"></ion-icon>
+        </ion-item>
+        <p [class.active]="checkactive('weekly-program')">Weekly Program</p>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  <ion-content>
+
+    <ion-router-outlet id="main"></ion-router-outlet>
+
+  </ion-content>
+
 </ion-app>

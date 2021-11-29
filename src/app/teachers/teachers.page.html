@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar >
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title> {{teacher_speciality?.name|titlecase}} </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+
+<ion-content>
+  <div>
+    <ion-slides pager="true" [options]="toption">
+      <ion-slide *ngFor="let teacher of teachers">
+        <ion-avatar class="avatar">
+          <img class="tpp" [src]="teacher?.picture" [routerLink]="['/teacher',teacher._id]" />
+          <ion-label class="tname"> <span> {{teacher?.name|titlecase}}</span> </ion-label>
+        </ion-avatar>
+      </ion-slide>
+    </ion-slides>
+  </div>
+  <img class="tsimg" [src]="teacher_speciality?.image" />
+
+  <div class="desc">
+    <ion-label> {{teacher_speciality?.description}} </ion-label>
+  </div>
+
+
+  <div>
+    <ion-label class="catofbra"> Categories of Branch </ion-label>
+    <ion-slides pager="true" [options]="coption">
+      <ion-slide *ngFor="let item of categories">
+        <ion-card>
+          <img class="cimg" [src]="item?.image" [routerLink]="['/videos',item._id]">
+          <ion-label> <span> {{item.name}} </span> </ion-label>
+        </ion-card>
+      </ion-slide>
+    </ion-slides>
+  </div>
+</ion-content>

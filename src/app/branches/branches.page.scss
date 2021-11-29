@@ -1,0 +1,21 @@
+:host {
+  .teacher_specialtyname {
+    font-size: 25px;
+    font-style: initial;
+    margin-left: 5px;
+    color: var(--third)
+  }
+  ion-thumbnail {
+    height: 80px;
+    width: 70px;
+  }
+  .img {
+    object-fit: cover;
+    border-radius: 50%;
+  }
+  .icon {
+    right: 10px;
+    height: 80px;
+    color:  var(--maincolor1);
+  }
+}

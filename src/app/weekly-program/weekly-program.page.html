@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button>
+        <ion-icon name="menu-outline"></ion-icon>
+      </ion-menu-button>
+    </ion-buttons>
+    <ion-title>Weekly Program</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-card *ngFor="let item of weeklyp?.days">
+    <ion-card-header>
+      <ion-card-title> {{item.day_of_week|titlecase}} </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <table>
+        <tr>
+          <th>Event</th>
+          <th>Hours</th>
+        </tr>
+        <tr *ngFor="let hour of item?.hours">
+          <td class="event">{{hour?.description|titlecase}}</td>
+          <td class="hours">{{hour?.from}}-{{hour?.until}} </td>
+        </tr>
+      </table>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

@@ -1,0 +1,111 @@
+:host {
+  ion-card-title {
+    text-align: center;
+  }
+
+  .tname {
+    color: var(--maincolor2);
+    text-align: right;
+    margin-left: 30px;
+    font-size: 17px;
+  }
+
+  .days {
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    color: var(--maincolor1);
+    text-align: left;
+    margin-bottom: 5px;
+    margin: 10px;
+  }
+
+  ::ng-deep {
+    .mealcard {
+      max-height: calc(100% - #{50px});
+      position: relative;
+      overflow: hidden;
+      overflow-y: auto;
+      ::-webkit-scrollbar {
+        display: none;
+      }
+      min-width: 110 !important;
+      height: 110px;
+      padding: 0;
+      margin: 0;
+      margin-left: 15px;
+      box-shadow: none;
+      border: 1px solid var(--maincolor1);
+      margin-bottom: 20px;
+      --ion-background-color: var(--maincolor2) !important;
+    }
+  }
+  .cardfooter {
+    display: flex;
+    background-color: var(--maincolor2);
+    position: absolute;
+    bottom: -13px;
+    margin: 5px;
+    text-align: left;
+    font-size: 15px;
+    font-weight: bolder;
+    color: var(--maincolor1);
+    left: 11px;
+    padding: 3px 5px;
+    border-radius: 8px;
+    border: 1px dotted var(--maincolor1);
+  }
+  .fpname {
+    text-align: center;
+    padding: none;
+    color: var(--maincolor1);
+    font-weight: bolder;
+    margin: none;
+    font-size: 16px;
+    margin-top: 8px;
+  }
+  .meal {
+    padding: 13px;
+    text-align: left;
+    font-size: 13px;
+    display: flex;
+    color: var(--maincolor1);
+    font-weight: bold;
+    word-break: break-word;
+  }
+  .footer {
+    margin-left: 190px;
+  }
+  .minipp {
+    margin-left: 5px;
+  }
+
+  .segment {
+    background-color: var(--maincolor3) !important;
+    height: 45px;
+    margin: 3px;
+  }
+  .titem {
+    --ion-background-color: var(--maincolor2) !important;
+    border-radius: 8px;
+    width: 154px;
+  }
+  .sgmntbttn {
+    min-width: 145px;
+    padding: 3px;
+    height: 34px;
+  }
+  ::part(indicator-background) {
+    background-color: var(--maincolor2);
+  }
+  .tname {
+    color: var(--maincolor1);
+    padding: 0;
+    margin: 0;
+    font-weight: bold;
+  }
+  .maincard {
+    --ion-background-color: var(--maincolor3) !important;
+    margin: 10px;
+  }
+}

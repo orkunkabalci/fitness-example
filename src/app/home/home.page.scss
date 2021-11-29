@@ -1,0 +1,25 @@
+:host {
+  
+
+  .categoryname {
+    font-size: 40px;
+    font-style: initial;
+    margin-left: 7px;
+    color: var(--third);
+  }
+
+  .avatar {
+    height: 80px;
+    width: 80px;
+    object-fit: cover;
+    margin-bottom: 5px;
+    border-radius: 40%;
+    margin: 3px;
+  }
+  .icon {
+    right: 10px;
+    height: 80px;
+    color: rgb(236, 30, 30);
+  }
+  
+}

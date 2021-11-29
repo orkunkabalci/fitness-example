@@ -1,0 +1,43 @@
+:host {
+  .tsimg {
+    height: 200px;
+    width: 360px;
+    margin-left: 7px;
+  }
+  .desc {
+    margin: 5px;
+    padding: 15px;
+  }
+  .tpp {
+    margin-top: 5px;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+
+  }
+  .teacherstitle {
+    text-align: center;
+    font-weight: bold;
+  }
+  .cimg {
+    width: 150px;
+    height: 130px;
+  }
+  .catofbra {
+    margin-left: 28%;
+    font-weight: bold;
+  }
+  .tname {
+    font-size: smaller;
+  }
+  .avatar {
+    min-width: 90px;
+    min-height: 90px;
+  }
+  
+  ::ng-deep{
+  .swiper-pagination.swiper-pagination-bullets{
+    margin: -6px 4px;
+  }}
+
+}

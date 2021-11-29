@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button *ngIf="route!='/foodprogram'"></ion-back-button>
+      <ion-menu-button *ngIf="route=='/foodprogram'">
+        <ion-icon name="menu-outline"></ion-icon>
+      </ion-menu-button>
+    </ion-buttons>
+    <ion-title>Food Program</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+
+  <ion-segment class="segment" scrollable="true" value="{{activeprogram}}" (ionChange)="segmentChanged($event)">
+    <ion-segment-button class="sgmntbttn" *ngFor="let foodprogram of foodprograms" value="{{foodprogram._id}}">
+      <ion-label class="fpname"> {{foodprogram.name|titlecase}} </ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+  <ion-card class="maincard" *ngIf="index!=undefined">
+    <div *ngFor="let days of foodprograms[index]?.days">
+      <p class="days"> Day {{days?.day_of_week}} </p>
+      <ion-slides pager="true" [options]="option">
+        <ion-slide *ngFor="let item of days?.meal">
+          <ion-card class="mealcard">
+            <ion-label class="meal"> {{item?.description|titlecase}} </ion-label>
+          </ion-card>
+          <p class="cardfooter">{{item?.number_of_meal}}.Meal </p>
+        </ion-slide>
+      </ion-slides>
+    </div>
+    <ion-footer class="footer">
+      <ion-item class="titem" [routerLink]="['/teacher', foodprograms[index]?.teacher._id]" detail="false" lines="none">
+        <p class="tname"> {{foodprograms[index]?.teacher.name|titlecase}}</p>
+        <ion-avatar class="minipp">
+          <img [src]=" foodprograms[index]?.teacher.picture">
+        </ion-avatar>
+      </ion-item>
+    </ion-footer>
+  </ion-card>
+</ion-content>
+
+
+
+<ion-label> </ion-label>

@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button>
+        <ion-icon name="menu-outline"></ion-icon>
+      </ion-menu-button>
+    </ion-buttons>
+    <ion-title>Branches</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item detail="false" *ngFor="let item of teacher_specialties" [routerLink]="['/teachers',item._id]">
+      <ion-thumbnail slot="start">
+        <img class="img" [src]="item.image" />
+      </ion-thumbnail>
+      <ion-label class="teacher_specialtyname">{{item.name|titlecase}} </ion-label>
+      <ion-icon class="icon" name="chevron-forward-outline"></ion-icon>
+    </ion-item>
+  </ion-list>
+</ion-content>

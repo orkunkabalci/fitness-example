@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{category?.name}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <img class="img" [src]="category?.image" />
+  <ion-card *ngFor="let video of videos">
+    <ion-card-header class="vname">
+      {{video?.name |titlecase}}
+    </ion-card-header>
+    <ion-card-content>
+      <img [routerLink]="['/video',video?._id]" [src]="video?.image">
+    </ion-card-content>
+  </ion-card>
+</ion-content>

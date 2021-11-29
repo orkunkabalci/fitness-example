@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar >
+    <ion-buttons slot="start">
+      <ion-menu-button>
+        <ion-icon  name="menu-outline"></ion-icon>
+      </ion-menu-button>
+    </ion-buttons>
+    <ion-title>Profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>  <ion-avatar class="profile-picture"  >  <img [src]="user?.image"/></ion-avatar></ion-item>    
+    <ion-item><ion-label><span>Name:</span>{{user?.name|titlecase}}</ion-label></ion-item>
+    <ion-item><ion-label><span>Surname:</span> {{user?.surname|titlecase}}</ion-label></ion-item>
+    <ion-item><ion-label><span>Mail:</span>:{{user?.mail}}</ion-label></ion-item>
+    <ion-item><ion-label><span>Birtday:</span>:{{user?.birthdate | date }}</ion-label> </ion-item>
+    <ion-item><ion-label><span>Phone Number:</span>{{user?.phone_number}}</ion-label></ion-item>
+    <ion-item><ion-label><span>Login Date:</span>{{user?.created_at| date }}</ion-label></ion-item>
+    <ion-item detail><ion-label class="links"  routerLink="workouts" >Active Trainings</ion-label></ion-item>
+    <ion-item detail><ion-label class="links"  routerLink="foodprogram">Food Programs</ion-label></ion-item>
+    <ion-item detail><ion-label class="links"  routerLink="performance">Performance</ion-label></ion-item>
+  </ion-list>
+        <h3>Watched Videos</h3>
+        <ion-slides   pager="true" [options]="slideOpts" >
+          <ion-slide *ngFor="let item of watched_videos">
+           <img [routerLink]="['/video',item.video._id]" [src]="item?.video.image" > 
+          </ion-slide>
+        </ion-slides>
+     
+
+
+</ion-content>
+
+
+

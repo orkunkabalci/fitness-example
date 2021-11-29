@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { DataService, Message } from '../services/data.service';
+import { user, User, initialize, category, teacher } from "../services/bucket"
+import { environment } from 'src/environments/environment';
+
 
 @Component({
   selector: 'app-home',
@@ -7,16 +10,30 @@ import { DataService, Message } from '../services/data.service';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-  constructor(private data: DataService) {}
+  constructor(private data: DataService) { initialize({ identity: environment.token }) }
+  categories;
+  teachers;
+  ngOnInit() {
+    this.getCategories().then((data) => this.categories = data);
+    this.getteachers().then((data)=> this.teachers=data);
+  }
+  
 
-  refresh(ev) {
-    setTimeout(() => {
-      ev.detail.complete();
-    }, 3000);
+  getCategories(){
+    return category.getAll();
   }
 
-  getMessages(): Message[] {
-    return this.data.getMessages();
+ 
+
+  getteachers(){
+    return teacher.getAll({ queryParams: { relation: true}})
+  }
+  option = {
+    slidesPerView: 3,
+    // centeredSlides: true,
+    spaceBetween: 10,
+    // autoplay: true,
   }
 
+  
 }
